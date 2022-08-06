@@ -15,15 +15,17 @@
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
+											@include('validate')
 											<h3>Login <span>Doccure</span></h3>
 										</div>
-										<form action="https://dreamguys.co.in/demo/doccure/index.html">
+										<form action="{{route('login')}}" method="post">
+											@csrf
 											<div class="form-group form-focus">
-												<input type="email" class="form-control floating">
-												<label class="focus-label">Email</label>
+												<input name="user" type="text" class="form-control floating">
+												<label class="focus-label">Email or Phone</label>
 											</div>
 											<div class="form-group form-focus">
-												<input type="password" class="form-control floating">
+												<input name="password" type="password" class="form-control floating">
 												<label class="focus-label">Password</label>
 											</div>
 											<div class="text-right">

@@ -31,6 +31,10 @@ class FrontendController extends Controller
     {
         return view('frontend.doctor.register');
     }
-
+    //sHOW patient Dashboard pages
+    public function PatientDashboardPage()
+    {
+        return view('frontend.patient.dashboard');
+    }
 
 }

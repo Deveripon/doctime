@@ -15,23 +15,34 @@
                                 <img src="{{url('/frontend/assets/img/login-banner.png')}}" class="img-fluid" alt="Doccure Register">	
                             </div>
                             <div class="col-md-12 col-lg-6 login-right">
+                                @include('
+                                validate')
                                 <div class="login-header">
                                     <h3>Patient Register <a href="{{route('doctor.register.page')}}">Are you a Doctor?</a></h3>
                                 </div>
                                 
                                 <!-- Register Form -->
-                                <form action="https://dreamguys.co.in/demo/doccure/doctor-dashboard.html">
+                                <form action="{{route('patient.register')}}" method="post">
+                                    @csrf
                                     <div class="form-group form-focus">
-                                        <input type="text" class="form-control floating">
+                                        <input name="name" type="text" class="form-control floating">
                                         <label class="focus-label">Name</label>
                                     </div>
                                     <div class="form-group form-focus">
-                                        <input type="text" class="form-control floating">
+                                        <input name="email" type="email" class="form-control floating">
+                                        <label class="focus-label">Email</label>
+                                    </div>
+                                    <div class="form-group form-focus">
+                                        <input name="mobile" type="text" class="form-control floating">
                                         <label class="focus-label">Mobile Number</label>
                                     </div>
                                     <div class="form-group form-focus">
-                                        <input type="password" class="form-control floating">
+                                        <input name="password" type="password" class="form-control floating">
                                         <label class="focus-label">Create Password</label>
+                                    </div>
+                                    <div class="form-group form-focus">
+                                        <input name="password_confirmation" type="password" class="form-control floating">
+                                        <label class="focus-label">Confirm Password</label>
                                     </div>
                                     <div class="text-right">
                                         <a class="forgot-link" href="{{route('login.page')}}">Already have an account?</a>
